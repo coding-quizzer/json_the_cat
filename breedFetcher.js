@@ -1,6 +1,6 @@
 const request = require('request');
-const getCatBreedInformation = function() {
-  request('https://api.thecatapi.com/v1/breeds/search?q=siberian', (error, message, body) => {
+const getCatBreedInformation = function(breed) {
+  request(`https://api.thecatapi.com/v1/breeds/search?q=${breed}`, (error, message, body) => {
   
     if (error) {
       console.log("error:", error);
@@ -14,4 +14,4 @@ const getCatBreedInformation = function() {
   });
 }
 
-getCatBreedInformation('siberian');
+getCatBreedInformation('siam');
